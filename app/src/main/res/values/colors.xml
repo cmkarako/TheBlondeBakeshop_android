@@ -11,5 +11,7 @@
     <color name="dark_text">#333333</color>
     <color name="darker_pink">#FAE2F2</color>
     <color name="red">#EC0000</color>
-    <color name="green">#36E123</color>
+    <color name="green">#28A81A</color>
+    <color name="gray">#DCD9D9</color>
+    <color name="light_gray">#FAF8F8</color>
 </resources>

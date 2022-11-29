@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.firebasecourse">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +15,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseCourse">
+        <activity
+            android:name=".ProductDetailsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AddProductsActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true"
+            android:label="@string/title_activity_dashboard" />
+        <activity
+            android:name=".UserProfileActivity"
+            android:exported="true" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
@@ -24,23 +55,21 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.FirebaseCourse">
-        </activity>
+            android:theme="@style/Theme.FirebaseCourse" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.FirebaseCourse">
-        </activity>
+            android:theme="@style/Theme.FirebaseCourse" />
     </application>
 
 </manifest>

@@ -35,7 +35,17 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
         Log.i("Last Name: ", user.lastName)
         Log.i("Email: ", user.email)
 
-        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        if (user.profileCompleted ==0) {
+            val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
+            intent.putExtra(Constants.FIRST_NAME, user.firstName)
+            intent.putExtra(Constants.IMAGE, user.image)
+            intent.putExtra(Constants.LAST_NAME, user.lastName)
+            intent.putExtra(Constants.EMAIL, user.email)
+            intent.putExtra(Constants.MOBILE, user.mobile)
+            startActivity(intent)
+        } else {
+            startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
+        }
         finish()
     }
 

@@ -1,15 +1,26 @@
 package com.example.firebasecourse
 
+import android.app.Activity
 import android.app.Dialog
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import java.io.IOException
 
 open class BaseActivity : AppCompatActivity() {
 
     private lateinit var progressDialog: Dialog
+    private var selectedImageUri: Uri? = null
 
 
     fun showErrorSnackBar(message: String, errorMessage: Boolean) {

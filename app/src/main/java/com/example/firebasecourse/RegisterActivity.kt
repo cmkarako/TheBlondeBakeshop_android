@@ -18,28 +18,27 @@ class RegisterActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        setUpActionBar()
+        //setUpActionBar()
 
         val registerUser : Button = findViewById(R.id.buttonToRegister)
         registerUser.setOnClickListener {
          //   validateRegisterDetails()
             registerUser()
-
         }
     }
 
-    private fun setUpActionBar() {
-        val toolbar: Toolbar = findViewById(R.id.toolbar_register_activity)
-        setSupportActionBar(toolbar)
-
-        val actionBar = supportActionBar
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
-            actionBar.setTitle("Return to Login")
-        }
-        toolbar.setNavigationOnClickListener { onBackPressed() }
-    }
+//    private fun setUpActionBar() {
+//        val toolbar: Toolbar = findViewById(R.id.toolbar_register_activity)
+//        setSupportActionBar(toolbar)
+//
+//        val actionBar = supportActionBar
+//        if (actionBar != null) {
+//            actionBar.setDisplayHomeAsUpEnabled(true)
+//            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
+//            actionBar.setTitle("Return to Login")
+//        }
+//        toolbar.setNavigationOnClickListener { onBackPressed() }
+//    }
 
     private fun validateRegisterDetails() : Boolean {
 
@@ -114,6 +113,8 @@ class RegisterActivity : BaseActivity() {
                     }
                 }
             )
+            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 
